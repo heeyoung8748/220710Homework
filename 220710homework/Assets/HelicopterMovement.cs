@@ -18,14 +18,16 @@ public class HelicopterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float xSpeed = _input.X * speed;
+        float zSpeed = _input.Z * speed;
         float ySpeed = _input.Y * speed;
      if(UseSpeed)
         {
-            _playerRigidBody.velocity = new Vector3(0f, ySpeed / 10, 0f); // 어느 방향으로 속도를 줄 것인가?
+            _playerRigidBody.velocity = new Vector3(xSpeed, ySpeed, zSpeed); // 어느 방향으로 속도를 줄 것인가?
         }
         else
         {
-            _playerRigidBody.AddForce(0f, ySpeed, 0f);
+            _playerRigidBody.AddForce(xSpeed, ySpeed, zSpeed);
         }
     }
 }
