@@ -10,12 +10,10 @@ public class HelicopterMovement : MonoBehaviour
     public bool UseSpeed = false;
     void Start()
     {
-        // _input에 값 할당
         _input = GetComponent<HelicopterInput>();
         _playerRigidBody = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         float xSpeed = _input.X * speed;
